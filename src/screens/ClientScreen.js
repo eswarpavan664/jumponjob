@@ -15,6 +15,7 @@ import {Technical,NonTechnical} from "../components/Jobs"
 const { Header, Footer, Sider, Content } = Layout;
 import {auth} from '../firebase';
 import firebaseDB from '../firebase';
+import '../card.css'
 const TechnicalCards=(props)=>{
     const [getData,setGetData] = useState({});
     useEffect(()=>{
@@ -27,14 +28,17 @@ const TechnicalCards=(props)=>{
 
      
     return(
-        <div class="row" >
+        <div class="row"   >
+        
         {getData &&
         Object.keys(getData).map(key =>
 
-           <div class="col-lg-3 col-sm-6 col-md-6 mt-4">
-                        <div class="card" id="cardstyle">
-                             <h2  style={{textAlign:'center'}}>Name:- {getData[key].companyname}</h2>
-                            <hr style={{backgroundColor: 'black'}} size="10"/>
+           
+                <article class="text-center">
+                <div class="text">
+  
+                    <h3  style={{textAlign:'center'}}>{getData[key].companyname}</h3>
+                            <hr style={{backgroundColor: 'black'}} />
                             <div class="card-body">
                              <h4>{getData[key].role}</h4>
                                 <h4>{getData[key].salary}₹</h4>
@@ -52,11 +56,14 @@ const TechnicalCards=(props)=>{
                           jobskill:getData[key].skills
                         }
                 }}
-                exact> <p style={{textAlign:'center'}} id="cardapply"> Apply</p></NavLink>
-                            </div>
-
-                        </div>
-                    </div>    
+                exact> <p style={{textAlign:'center'}} id="cardapply" class="btn"> Apply</p></NavLink>
+                    </div>       
+                        
+                </div>
+                </article>
+      
+                                                                                                                                          
+            
         )}
 
             
@@ -80,10 +87,11 @@ const NonTechnicalCards=(props)=>{
         <div class="row" >
         {getData &&
         Object.keys(getData).map(key =>
-           <div class="col-lg-3 col-sm-6 col-md-6 mt-4">
-                        <div class="card" id="cardstyle">
-                             <h2  style={{textAlign:'center'}}>Name:- {getData[key].companyname}</h2>
-                            <hr style={{backgroundColor: 'black'}} size="10"/>
+            <article class="text-center">
+                <div class="text">
+  
+                    <h3  style={{textAlign:'center'}}>{getData[key].companyname}</h3>
+                            <hr style={{backgroundColor: 'black'}} />
                             <div class="card-body">
                              <h4>{getData[key].role}</h4>
                                 <h4>{getData[key].salary}₹</h4>
@@ -101,11 +109,11 @@ const NonTechnicalCards=(props)=>{
                           jobskill:getData[key].skills
                         }
                 }}
-                exact> <p style={{textAlign:'center'}} id="cardapply"> Apply</p></NavLink>
-                            </div>
-
-                        </div>
-                    </div>    
+                exact> <p style={{textAlign:'center'}} id="cardapply" class="btn"> Apply</p></NavLink>
+                    </div>       
+                        
+                </div>
+                </article>
         )}
 
             
@@ -171,7 +179,7 @@ constructor(props){
 
         <Content>
 
-            <div class="container">
+            <div class="container" style={{width:'100%'}}>
                 <h1>Technical Jobs</h1>
                  <TechnicalCards/>
                 <h1>Non-Technical Jobs</h1>

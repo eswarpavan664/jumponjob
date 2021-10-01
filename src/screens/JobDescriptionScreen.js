@@ -97,7 +97,7 @@ const UploadNonTechnicalDetails=(props)=>{
         })
     }
   return(
-<div>
+<div  >
       
       <form className="form-horizontal" onSubmit={submitHandler} autoComplete="off">
         <div className="form-group">
@@ -207,9 +207,9 @@ if(props.cource==="NonTechnical"){
   return <UploadNonTechnicalDetails cname={props.cname} jobi={props.jobids}/>
 }
   return(
-      <div>
+      <div  style={{marginBottom:'20%'}}>
       <h3>If you  Want to Apply for this job just fill the below form and submit it </h3>
-          <form className="form-horizontal" onSubmit={submitHandler} autoComplete="off">
+          <form className="form-horizontal" onSubmit={submitHandler} autoComplete="off"  >
             <div className="form-group">
           
             <div className="col-sm-4">

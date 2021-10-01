@@ -16,8 +16,7 @@ import { auth } from '../firebase';
 require('firebase/auth');
 import Admin from "../screens/AdminScreen"
 import UserAuth from '../components/UserAuth';
-
-
+import '../form.css'
 const EmailAuth=()=>{
   const [presentUser,setPresentUser] = useState(null);
   useEffect(()=>{
@@ -108,18 +107,52 @@ const signIn = e =>{
         ).catch(err => console.log(err))
 }
 return (
-    <div>
-        <center>
-            <form autoComplete="off">
-                <h1>Company Registration for Jobs Posting</h1>
-               
-                <input type="email" name="email" value={email} placeholder="Email" onChange={changeHandler}/><br />
-                <input type="password" name="password" value={password} placeholder="Password" onChange={changeHandler}/><br />
-                <button onClick={signIn}>Sign In</button> &nbsp;&nbsp;
-                <button onClick={signUp}>Sign Up</button>
-            </form>
-        </center>
-    </div>
+  <div class="container" style={{width:'150%'}}>
+  <div class="row">
+      <div class="col-lg-3 col-md-2"></div>
+      <div class="col-lg-6 col-md-8 login-box">
+          <div class="col-lg-12 login-key">
+              <i class="fa fa-key" aria-hidden="true"></i>
+          </div>
+          <div class="col-lg-12 login-title">
+              ADMIN PANEL
+          </div>
+
+          <div class="col-lg-12 login-form">
+              <div class="col-lg-12 login-form">
+                  <form>
+                      <div class="form-group">
+                          <label class="form-control-label">USERNAME</label>
+                         <input type="email" name="email" value={email} placeholder="Email" onChange={changeHandler}/><br />
+
+                      </div>
+                      <div class="form-group">
+                          <label class="form-control-label">PASSWORD</label>
+                         
+     <input type="password" name="password" value={password} placeholder="Password" onChange={changeHandler}/><br />
+     
+       </div>
+
+                      <div class="col-lg-12 loginbttm">
+                          <div class="col-lg-6 login-btm login-text">
+                              
+                          </div>
+                          <div class="col-lg-6 login-btm login-button">
+                              <button type="submit"  onClick={signIn} class="btn btn-outline-primary">LOGIN</button>
+    <button type="submit"   onClick={signUp} class="btn btn-outline-primary">SIGNUP</button>
+                  
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-2"></div>
+      </div>
+  </div>
+  </div>
+
+
+
 )
 }
 
@@ -158,7 +191,7 @@ class MainScreen extends React.Component {
             {this.state.userissiginin?<NavLink to="/ClientScreen">click to on palnel</NavLink>:<div  class="container-fluid pf">
               <div class="row" id="rowmain">
 
-                  <div class="col-md-4">
+                  <div class="col-md-5" >
                      <EmailLogin/>
                       </div> 
 

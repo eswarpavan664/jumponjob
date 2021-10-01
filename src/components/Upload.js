@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 import firebaseDB from '../firebase';
 import { NonTechnical } from './Jobs';
 import '../index.css'
+import '../card.css'
 /*const displaydata=()=>{
     const [getData,setGetData] = useState({});
     useEffect(()=>{
@@ -50,16 +51,16 @@ const CardDisplay=(props)=>{
         return null
     }
     return(
-        <div class="col-lg-5 col-sm-6 col-md-6 mt-4">
-        <div class="card" id="cardstyles">
-            <p style={{textAlign:'center'}}>company Name:- {props.name}</p>
-               <p style={{textAlign:'center'}}>Salary:-{props.sal}</p>
-                <p style={{textAlign:'center'}}>Role:- {props.rol}</p>
-                <p style={{textAlign:'center'}}>Skills Requeried:- {props.skill}</p>
-                <p style={{textAlign:'center'}}>Place:- {props.pla}</p>
-               <h3>Description</h3>
+        <article id="uploadcard"> 
+         <div class="text"> 
+            <p style={{textAlign:'center'}} id="teststyle">company Name:- {props.name}</p>
+               <p style={{textAlign:'center'}} id="teststyle">Salary:-{props.sal}</p>
+                <p style={{textAlign:'center'}} id="teststyle">Role:- {props.rol}</p>
+                <p style={{textAlign:'center'}} id="teststyle">Skills Requeried:- {props.skill}</p>
+                <p style={{textAlign:'center'}} id="teststyle">Place:- {props.pla}</p>
+               <h3 id="testbold">Description</h3>
                <hr style={{backgroundColor: 'black'}} size="10"/>
-                <p>Description:- {props.des}</p><br></br>
+                <p  id="testbold">{props.des}</p><br></br>
 
             <div class="card-body">
              
@@ -69,8 +70,9 @@ const CardDisplay=(props)=>{
                 >Delete</button>  
 
             </div>
-        </div>
-       </div> 
+        
+       </div>
+       </article>
     )
 }
 
@@ -90,18 +92,18 @@ const CardDisplayTech=(props)=>{
         return null
     }
 return(
-    <div class="col-lg-5 col-sm-6 col-md-6 mt-4">
-    <div class="card" id="cardstyles">
-        <p style={{textAlign:'center'}}>company Name:- {props.name}</p>
-           <p style={{textAlign:'center'}}>Salary:-{props.sal}</p>
-            <p style={{textAlign:'center'}}>Role:- {props.rol}</p>
-            <p style={{textAlign:'center'}}>Skills Requeried:- {props.skill}</p>
-            <p style={{textAlign:'center'}}>Place:- {props.pla}</p>
-           <h3>Description</h3>
-           <hr style={{backgroundColor: 'black'}} size="10"/>
-            <p>Description:- {props.des}</p><br></br>
+    <article id="uploadcard"> 
+    <div class="text"> 
+       <p style={{textAlign:'center'}} id="teststyle">company Name:- {props.name}</p>
+          <p style={{textAlign:'center'}} id="teststyle">Salary:-{props.sal}</p>
+           <p style={{textAlign:'center'}} id="teststyle">Role:- {props.rol}</p>
+           <p style={{textAlign:'center'}} id="teststyle">Skills Requeried:- {props.skill}</p>
+           <p style={{textAlign:'center'}} id="teststyle">Place:- {props.pla}</p>
+          <h3 id="testbold">Description</h3>
+          <hr style={{backgroundColor: 'black'}} size="10"/>
+           <p  id="testbold">{props.des}</p><br></br>
 
-        <div class="card-body">
+       <div class="card-body">
          
 
      <button className="btn btn-danger"
@@ -109,8 +111,9 @@ return(
             >Delete</button>  
 
         </div>
-    </div>
+     
    </div> 
+   </article>
 )
 }
 const UploadNonTch=(props)=>{
@@ -152,7 +155,7 @@ const UploadNonTch=(props)=>{
             }
         )
         setNonTechData({
-            id:"",
+            id:props.userinfo,
             companyname:"",
             description:"",
             role:"",
