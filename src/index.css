@@ -109,7 +109,7 @@ hr{
 }
 #cardstyles{
     border-width: 5px;
-    border-color: black;
+    border-color: rgba(0, 0, 0, 0.5);
 }
 #cardstyles p{
     color:  black;
@@ -132,7 +132,11 @@ hr{
     }
 }
 
-
+#client_row{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .footer-distributed {
     background-color: #2c292f;
     box-sizing: border-box;

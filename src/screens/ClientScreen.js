@@ -28,7 +28,7 @@ const TechnicalCards=(props)=>{
 
      
     return(
-        <div class="row"   >
+        <div class="row"  id="client_row" >
         
         {getData &&
         Object.keys(getData).map(key =>
@@ -84,7 +84,7 @@ const NonTechnicalCards=(props)=>{
 
 
     return(
-        <div class="row" >
+        <div class="row" id="client_row">
         {getData &&
         Object.keys(getData).map(key =>
             <article class="text-center">
